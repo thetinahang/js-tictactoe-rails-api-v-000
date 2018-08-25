@@ -30,10 +30,10 @@ function resetBoard () {
 function checkWinner () {
     let winner = false;
     let board = [];
-    
-    $("td").text((index, square) => board[index] = square) 
+
+    $("td").text((index, square) => board[index] = square)
     // populating an imaginary board by index (see http://api.jquery.com/text/#text2)
-    
+
     winCombinations.forEach(function(combo) {
         let spot0 = combo[0];
         let spot1 = combo[1];
@@ -90,7 +90,7 @@ function loadGame (gameid) {
 function previousGames () {
     $('div#games').empty();
     $.get('/games', function (games) {
-        if (games.data.length) {    
+        if (games.data.length) {
             games.data.map(function(game) {
                 $('div#games').append(`<button id="gameid-${game.id}">Retrieve Game: #${game.id}</button><br>`);
                 $("#gameid-"+game.id).on('click', () => loadGame(game.id));
