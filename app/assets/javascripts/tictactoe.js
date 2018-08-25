@@ -3,9 +3,9 @@
 var turn = 0;
 let gameId = 0;
 const winCombinations= [
-    [0,1,2], [3,4,5], [6,7,8], 
-    [0,3,6], [1,4,7], [2,5,8], 
-    [0,4,8], [2,4,6] 
+    [0,1,2], [3,4,5], [6,7,8],
+    [0,3,6], [1,4,7], [2,5,8],
+    [0,4,8], [2,4,6]
 ];
 
 function player () {
@@ -32,14 +32,14 @@ function checkWinner () {
     let board = [];
 
     $("td").text((index, square) => board[index] = square)
-    // populating an imaginary board by index (see http://api.jquery.com/text/#text2)
 
     winCombinations.forEach(function(combo) {
         let spot0 = combo[0];
         let spot1 = combo[1];
         let spot2 = combo[2];
 
-        if ((board[spot0] === "X" && board[spot1] === "X" && board[spot2] === "X") || (board[spot0] === "O" && board[spot1] === "O" && board[spot2] === "O")) {
+        if ((board[spot0] === "X" && board[spot1] === "X" && board[spot2] === "X") || 
+        (board[spot0] === "O" && board[spot1] === "O" && board[spot2] === "O")) {
             var message = `Player ${board[spot0]} Won!`;
             setMessage(message);
             return winner = true;
