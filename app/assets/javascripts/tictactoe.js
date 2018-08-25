@@ -38,7 +38,7 @@ function checkWinner () {
         let spot1 = combo[1];
         let spot2 = combo[2];
 
-        if ((board[spot0] === "X" && board[spot1] === "X" && board[spot2] === "X") || 
+        if ((board[spot0] === "X" && board[spot1] === "X" && board[spot2] === "X") ||
         (board[spot0] === "O" && board[spot1] === "O" && board[spot2] === "O")) {
             var message = `Player ${board[spot0]} Won!`;
             setMessage(message);
